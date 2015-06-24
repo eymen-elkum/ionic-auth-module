@@ -1,22 +1,24 @@
 <ion-view view-title="Login" hide-back-button="false" hide-nav-bar="false">
     <ion-content>
-        <div class="list">
-            <label class="item item-input">
-                <span class="input-label">Email</span>
-                <input type="text" ng-model="user.email">
-            </label>
-            <label class="item item-input">
-                <span class="input-label">Password</span>
-                <input type="password" ng-model="user.password">
-            </label>
-        </div>
-        <div class="padding">
-            <button class="button button-block button-positive" ng-click="signIn(user)">
-                Sign-In
-            </button>
-            <p class="text-center">
-                <a href="#/forgot-password">Forgot password</a>
-            </p>
-        </div>
+        <form ng-submit="login()">
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Email</span>
+                    <input type="text" ng-model="user.email">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" ng-model="user.password">
+                </label>
+            </div>
+            <div class="padding">
+                <button class="button button-block button-positive" ng-click="signIn(user)">
+                    Sign-In
+                </button>
+                <p class="text-center">
+                    <a href="#/forgot-password">Forgot password</a>
+                </p>
+            </div>
+        </form>
     </ion-content>
 </ion-view>

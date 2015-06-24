@@ -11,12 +11,11 @@ angular.module('authApp').factory('auth_interceptor', function ($q, $log, authSe
                 case 401:
                     pr('Http: responseError -> status_code: ' + response.status);
                     pr('before redirect ...');
-                    $injector.get('$state').transitionTo('auth.login');
+                    $injector.get('$state').transitionTo('auth.login', {}, {location: false});
                     var deferred = $q.defer();
                     httpBuffer.append(response.config, deferred);
                     $rootScope.$broadcast('event:auth-loginRequired', response);
                     return deferred.promise;
-                    break;
                 case 403:
                     pr('403');
                     $rootScope.$broadcast('event:auth-forbidden', response);
@@ -24,7 +23,7 @@ angular.module('authApp').factory('auth_interceptor', function ($q, $log, authSe
             }
         }
 
-        return response; // or $q.when(config);
+        return $q.reject(response);
     }
 
     var interceptor = {
@@ -32,13 +31,6 @@ angular.module('authApp').factory('auth_interceptor', function ($q, $log, authSe
             config.params = config.params || {};
             _.extend(config.params, defaultParams);
             return config; // or $q.when(config);
-        },
-        'response'     : function (response) {
-            return onError(response);
-        },
-        'requestError' : function (rejection) {
-            pr('Http: requestError');
-            return rejection;
         },
         'responseError': function (rejection, q, w, e) {
             return onError(rejection);

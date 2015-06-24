@@ -9,4 +9,7 @@
  */
 angular.module('authApp').controller('LoginCtrl', function ($scope, user) {
     $scope.user = user.getUser();
+    $scope.login = function () {
+        user.login($scope.user);
+    }
 });

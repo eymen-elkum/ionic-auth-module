@@ -3,12 +3,12 @@
 function pr(o) {
     console.log('--------------------------------------------------------')
     console.log(o)
-    console.log('--------------------------------------------------------')
+    console.log('........................................................')
 }
 function er(o) {
     console.log('--------------------------------------------------------')
     console.warn(o)
-    console.log('--------------------------------------------------------')
+    console.log('........................................................')
 }
 angular.module('authApp', ['ui.router', 'ionic', 'LocalStorageModule', 'ngAuth-buffer','ngAnimate']);
 angular.module('authApp').config(function ($stateProvider, $urlRouterProvider, localStorageServiceProvider, $httpProvider) {
