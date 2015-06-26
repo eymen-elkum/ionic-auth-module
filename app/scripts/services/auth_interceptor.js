@@ -14,6 +14,7 @@ angular.module('authApp').factory('auth_interceptor', function ($q, $log, authSe
                     $injector.get('$state').transitionTo('auth.login', {}, {location: false});
                     var deferred = $q.defer();
                     httpBuffer.append(response.config, deferred);
+                    httpBuffer.state($injector.get('$state').current);
                     $rootScope.$broadcast('event:auth-loginRequired', response);
                     return deferred.promise;
                 case 403:

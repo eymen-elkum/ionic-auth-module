@@ -3,6 +3,7 @@
 angular.module('ngAuth-buffer', []).factory('httpBuffer', ['$injector', function ($injector) {
     /** Holds all the requests, so they can be re-requested in future. */
     var buffer = [];
+    var state = {};
 
     /** Service initialized later because of circular dependency problem. */
     var $http;
@@ -21,12 +22,16 @@ angular.module('ngAuth-buffer', []).factory('httpBuffer', ['$injector', function
     }
 
     return {
+        state : function (s) {
+            state = s || state;
+            return  state;
+        },
         /**
          * Appends HTTP request configuration object with deferred response attached to buffer.
          */
         append: function (config, deferred) {
             buffer.push({
-                config: config,
+                config  : config,
                 deferred: deferred
             });
         },

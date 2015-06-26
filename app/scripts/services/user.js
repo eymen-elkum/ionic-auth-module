@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('authApp').service('user', function (localStorageService, Base64, Encryptor, $http, authSetting, httpBuffer, $rootScope) {
+angular.module('authApp').service('user', function (localStorageService, Base64, Encryptor, $http, authSetting, httpBuffer, $rootScope, $state) {
 
     pr('start user service')
 
@@ -58,13 +58,16 @@ angular.module('authApp').service('user', function (localStorageService, Base64,
         login  : function (user) { //cleared password!
             updateAccount(user);
             $http.get(authSetting.root + 'private', {ignoreAuthModule: true}).success(function (result) {
+                //$state.transitionTo()
                 var configUpdater = null;
                 var updater = configUpdater || function (config) {
                         return config;
                     };
                 var data = {}
                 $rootScope.$broadcast('event:auth-loginConfirmed', data);
-                httpBuffer.retryAll(updater);
+                $state.transitionTo(httpBuffer.state().name).then(function () {
+                    httpBuffer.retryAll(updater);
+                });
             }).error(function (error) {
                 var reason = {};
                 var data = {};
