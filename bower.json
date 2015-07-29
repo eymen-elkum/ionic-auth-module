@@ -41,6 +41,6 @@
     ".gitattributes",
 		".tmp",
 		".git",
-		".idea",
+		".idea"
   ]
 }
