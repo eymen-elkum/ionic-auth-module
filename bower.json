@@ -1,5 +1,5 @@
 {
-  "name": "ionicAuth",
+  "name": "ionic-auth-mudule",
   "version": "0.1",
 	"description": "Ionic full auth modle",
 	  "main": [
