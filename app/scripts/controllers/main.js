@@ -1,5 +1,5 @@
 'use strict';
 
-angular.module('authApp').controller('MainCtrl', function ($scope) {
-    console.log('Main controller starts');
+angular.module('testApp').controller('MainCtrl', function ($scope) {
+    pr('Main controller starts');
 });

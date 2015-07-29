@@ -7,7 +7,7 @@
  * # PublicCtrl
  * Controller of the authApp
  */
-angular.module('authApp').controller('PublicCtrl', function ($scope, $http, authSetting) {
+angular.module('testApp').controller('PublicCtrl', function ($scope, $http, authSetting) {
     $http.get(authSetting.root + 'public').success(function () {
             pr('Public request success .......');
         }

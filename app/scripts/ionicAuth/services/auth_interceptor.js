@@ -1,8 +1,6 @@
 'use strict';
 
-angular.module('authApp').factory('auth_interceptor', function ($q, $log, authSetting, $injector, $rootScope, httpBuffer) {
-
-    var defaultParams = authSetting.httpParams;
+angular.module('ionicAuth').factory('auth_interceptor', function ($q, $log, $injector, $rootScope, httpBuffer) {
 
     function onError(response) {
         /** @namespace response.config.ignoreAuthModule */
@@ -10,11 +8,12 @@ angular.module('authApp').factory('auth_interceptor', function ($q, $log, authSe
             switch (response.status) {
                 case 401:
                     pr('Http: responseError -> status_code: ' + response.status);
-                    pr('before redirect ...');
-                    $injector.get('$state').transitionTo('auth.login', {}, {location: false});
+
+                    $injector.get('loginService').login();
+
+
                     var deferred = $q.defer();
                     httpBuffer.append(response.config, deferred);
-                    httpBuffer.state($injector.get('$state').current);
                     $rootScope.$broadcast('event:auth-loginRequired', response);
                     return deferred.promise;
                 case 403:
@@ -28,10 +27,8 @@ angular.module('authApp').factory('auth_interceptor', function ($q, $log, authSe
     }
 
     var interceptor = {
-        'request'      : function (config) {
-            config.params = config.params || {};
-            _.extend(config.params, defaultParams);
-            return config; // or $q.when(config);
+        'request': function (config) {
+            return config;
         },
         'responseError': function (rejection, q, w, e) {
             return onError(rejection);

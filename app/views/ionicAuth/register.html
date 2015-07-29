@@ -1,0 +1,26 @@
+<ion-modal-view >
+    <ion-header-bar >
+        <h1 class="title" ></h1 >
+
+        <div class="buttons" >
+            <button class="button button-icon icon ion-ios-close-empty" ng-click="close()" ></button >
+        </div >
+    </ion-header-bar >
+    <ion-content overflow-scroll="true" >
+        <div class="pane row" style="max-width: 400px;margin: 0 auto;" >
+            <div class="col col-center" >
+                <div class="text-center padding" >
+                    <img src="../../images/logo-100.png" >
+                </div >
+                <form ng-submit="register()" name="loginForm" ng-submit="signIn(user)" class="bordered-form" >
+                    <formly-form model="form.model" fields="form.fields" options="form.options" class="list" >
+                        <button class="button icon-right ion-person-add button-balanced button-block" > Register
+                        </button >
+                    </formly-form >
+                </form >
+                <a class="button icon-right ion-log-in button-energized button-block " ui-sref="auth.register" >I have
+                    an account</a >
+            </div >
+        </div >
+    </ion-content >
+</ion-modal-view >

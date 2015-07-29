@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('authApp').service('Encryptor', function (authSetting) {
+angular.module('ionicAuth').service('Encryptor', function (authSetting) {
     /*
      CryptoJS v3.1.2
      code.google.com/p/crypto-js

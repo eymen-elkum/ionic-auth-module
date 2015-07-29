@@ -2,12 +2,11 @@
 
 /**
  * @ngdoc service
- * @name authApp.register
+ * @name authApp.resetPass
  * @description
- * # register
+ * # resetPass
  * Service in the authApp.
  */
-angular.module('authApp')
-  .service('register', function () {
+angular.module('ionicAuth').service('resetPass', function () {
     // AngularJS will instantiate a singleton by calling "new" on this function
-  });
+});

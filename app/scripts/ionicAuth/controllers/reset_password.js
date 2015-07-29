@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name authApp.controller:ChangePassCtrl
+ * @name authApp.controller:ResetPasswordCtrl
  * @description
- * # ChangePassCtrl
+ * # ResetPasswordCtrl
  * Controller of the authApp
  */
-angular.module('authApp').controller('ChangePassCtrl', function ($scope) {
+angular.module('ionicAuth').controller('ResetPasswordCtrl', function ($scope) {
     $scope.awesomeThings = [
         'HTML5 Boilerplate',
         'AngularJS',

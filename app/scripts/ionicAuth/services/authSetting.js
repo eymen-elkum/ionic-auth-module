@@ -1,9 +1,11 @@
 'use strict';
 
-angular.module('authApp').provider('authSetting', function () {
+angular.module('ionicAuth').provider('authSetting', function () {
 
     // Private variables
-    var server_root = 'http://localhost/projects/reporter_v3/';
+    //var server_root = 'http://localhost:8765/';
+    var server_root = 'http://www.kobitmobil.com/apps/maras/';
+    //var server_root = 'http://localhost/projects/reporter_v3/';
     var encryption_key = 'IIASKSOQWKSSSSMCJJJJFKDLSOMKDDLSOPWIFRQKZXSSXKCKDO';
     var httpParams = {
         //service: true,

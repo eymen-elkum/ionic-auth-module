@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('authApp').controller('PrivateCtrl', function ($scope, $http, authSetting, $timeout) {
+angular.module('testApp').controller('PrivateCtrl', function ($scope, $http, authSetting, $timeout) {
     $timeout(function () {
         $http.get(authSetting.root + 'private').success(function () {
                 pr('Private request success .......???????????????????????????????????????????????');
@@ -16,5 +16,5 @@ angular.module('authApp').controller('PrivateCtrl', function ($scope, $http, aut
                 er('Private request error .......');
             }
         );
-    }, 1000)
+    })
 });

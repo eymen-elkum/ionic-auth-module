@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('authApp').service('Base64', function () {
+angular.module('ionicAuth').service('Base64', function () {
 
     var keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
 
