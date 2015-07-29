@@ -46,6 +46,6 @@
   "directory": "bower_components",
 	"_release": "0.1",
   "_source": "https://github.com/ayman-alkom/ionic-auth-mudule.git",
-  "_target": "~0.1",
+  "_target": "~0.1"
 }
 
