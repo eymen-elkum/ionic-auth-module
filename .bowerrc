@@ -1,7 +1,7 @@
 {
-  "name": "ionic-auth-mudule",
+  "name": "ionic-auth-module",
   "version": "0.1",
-	"description": "Ionic full auth modle",
+	"description": "Ionic full auth module",
 	  "main": [
     "release/js/script.js",
     "release/css/style.css"
@@ -45,7 +45,7 @@
   ],
   "directory": "bower_components",
 	"_release": "0.1",
-  "_source": "https://github.com/ayman-alkom/ionic-auth-mudule.git",
+  "_source": "https://github.com/ayman-alkom/ionic-auth-module.git",
   "_target": "~0.1"
 }
 
