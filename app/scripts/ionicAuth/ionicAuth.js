@@ -10,7 +10,8 @@ function er(o) {
     console.warn(o)
     console.log('........................................................')
 }
-angular.module('ionicAuth', ['ui.router', 'ionic', 'LocalStorageModule', 'ngAuth-buffer', 'ngAnimate','formly','formlyIonic','ngMessages','toastr']);
+angular.module('auth-templates', []);
+angular.module('ionicAuth', ['ui.router', 'ionic', 'LocalStorageModule', 'ngAuth-buffer', 'ngAnimate','formly','formlyIonic','ngMessages','toastr','auth-templates']);
 angular.module('ionicAuth').config(function ($stateProvider, localStorageServiceProvider, $httpProvider, toastrConfig) {
 
     $httpProvider.interceptors.push('auth_interceptor');

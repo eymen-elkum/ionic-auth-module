@@ -438,11 +438,11 @@ module.exports = function (grunt) {
         },
         ngtemplates: {
             auth: {
-                cwd: '<%= yeoman.app %>/views',
-                src: 'ionicAuth/**.html',
+                cwd: '<%= yeoman.app %>',
+                src: 'views/ionicAuth/**.html',
                 dest: '.tmp/inline/templates.js',
                 options: {
-                    module: 'ionicAuth'
+                    module: 'auth-templates'
                 }
             }
         }
