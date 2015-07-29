@@ -40,7 +40,7 @@ angular.module('ionicAuth').config(function ($stateProvider, localStorageService
             url  : "/register",
             views: {
                 auth: {
-                    templateUrl: "../../views/ionicAuth/register.html",
+                    templateUrl: "views/ionicAuth/register.html",
                     controller : 'RegisterCtrl'
                 }
             }
@@ -49,7 +49,7 @@ angular.module('ionicAuth').config(function ($stateProvider, localStorageService
             url  : "/profile",
             views: {
                 auth: {
-                    templateUrl: "../../views/ionicAuth/profile.html",
+                    templateUrl: "views/ionicAuth/profile.html",
                     controller : 'ProfileCtrl'
                 }
             }
@@ -58,7 +58,7 @@ angular.module('ionicAuth').config(function ($stateProvider, localStorageService
             url  : "/reset_password",
             views: {
                 auth: {
-                    templateUrl: "../../views/ionicAuth/reset_password.html",
+                    templateUrl: "views/ionicAuth/reset_password.html",
                     controller : 'ResetPasswordCtrl'
                 }
             }
@@ -67,7 +67,7 @@ angular.module('ionicAuth').config(function ($stateProvider, localStorageService
             url  : "/change_pass",
             views: {
                 auth: {
-                    templateUrl: "../../views/ionicAuth/change_pass.html",
+                    templateUrl: "views/ionicAuth/change_pass.html",
                     controller : 'ChangePassCtrl'
                 }
             }

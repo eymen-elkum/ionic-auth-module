@@ -63,7 +63,7 @@ angular.module('ionicAuth').service('loginService', function ($rootScope, $ionic
 
     return {
         login: function () {
-            $ionicModal.fromTemplateUrl('views/login.html', {
+            $ionicModal.fromTemplateUrl('views/ionicAuth/login.html', {
                 scope: $scope
             }).then(function (modalObj) {
                 modal = modalObj;

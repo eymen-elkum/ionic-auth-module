@@ -296,7 +296,13 @@ module.exports = function (grunt) {
         },
         concat: {
             auth: {
-                src : ['<%= yeoman.app %>/scripts/ionicAuth/{,*/}*.js'],
+                src : [
+                    '<%= yeoman.app %>/scripts/ionicAuth/ionicAuth.js',
+                    '<%= yeoman.app %>/scripts/ionicAuth/HttpBuffer.js',
+                    '<%= yeoman.app %>/scripts/ionicAuth/controllers/{,*/}*.js',
+                    '<%= yeoman.app %>/scripts/ionicAuth/services/{,*/}*.js',
+                    '.tmp/inline/templates.js',
+                ],
                 dest: 'release/js/script.js'
             }
         },
@@ -429,8 +435,17 @@ module.exports = function (grunt) {
                     ]
                 }
             }
+        },
+        ngtemplates: {
+            auth: {
+                cwd: '<%= yeoman.app %>/views',
+                src: 'ionicAuth/**.html',
+                dest: '.tmp/inline/templates.js',
+                options: {
+                    module: 'ionicAuth'
+                }
+            }
         }
-
     });
 
     grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
@@ -487,6 +502,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('auth', [
         'clean:auth',
+        'ngtemplates:auth',
         'concat:auth',
         'uglify:auth',
         'copy:styles',

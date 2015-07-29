@@ -44,7 +44,7 @@ angular.module('ionicAuth').service('registerService', function ($rootScope, $io
     $scope.form = registerForm.form();
 
     function openModal() {
-        $ionicModal.fromTemplateUrl('views/register.html', {
+        $ionicModal.fromTemplateUrl('views/ionicAuth/register.html', {
             scope: $scope
         }).then(function (modalObj) {
             modal = modalObj;
