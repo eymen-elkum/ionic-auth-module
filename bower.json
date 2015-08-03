@@ -3,7 +3,7 @@
   "version": "0.1",
   "description": "Ionic full auth modle",
   "main": [
-	"release/js/script.js",
+	"release/js/ionic_auth.js",
 	"release/css/style.css"
   ],
   "keywords": [

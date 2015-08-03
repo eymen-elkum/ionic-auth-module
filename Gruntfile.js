@@ -288,8 +288,8 @@ module.exports = function (grunt) {
                 },
                 files  : {
                     //'<%= yeoman.release %>/scripts/scripts.js': [
-                    '<%= yeoman.release %>/js/script.js': [
-                        '<%= yeoman.release %>/js/script.js'
+                    '<%= yeoman.release %>/js/ionic_auth.js': [
+                        '<%= yeoman.release %>/js/ionic_auth.js'
                     ]
                 }
             }
@@ -303,7 +303,7 @@ module.exports = function (grunt) {
                     '<%= yeoman.app %>/scripts/ionicAuth/services/{,*/}*.js',
                     '.tmp/inline/templates.js',
                 ],
-                dest: 'release/js/script.js'
+                dest: 'release/js/ionic_auth.js'
             }
         },
 
@@ -424,7 +424,7 @@ module.exports = function (grunt) {
         'string-replace': {
             dist: {
                 files  : {
-                    '<%= yeoman.release %>/js/script.js': '<%= yeoman.release %>/js/script.js'
+                    '<%= yeoman.release %>/js/ionic_auth.js': '<%= yeoman.release %>/js/ionic_auth.js'
                 },
                 options: {
                     replacements: [
