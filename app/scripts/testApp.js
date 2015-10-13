@@ -1,4 +1,14 @@
 'use strict';
+function pr(o) {
+    console.log('--------------------------------------------------------')
+    console.log(o)
+    console.log('........................................................')
+}
+function er(o) {
+    console.log('--------------------------------------------------------')
+    console.warn(o)
+    console.log('........................................................')
+}
 
 angular.module('testApp', ['ui.router', 'ionic','ionicAuth']);
 angular.module('testApp').config(function ($stateProvider, $urlRouterProvider, localStorageServiceProvider, $httpProvider, toastrConfig) {
@@ -43,6 +53,6 @@ angular.module('testApp').config(function ($stateProvider, $urlRouterProvider, l
 
 });
 
-angular.module('testApp').run(function ($rootScope, $http, formlyConfig, formlyValidationMessages) {
+angular.module('testApp').run(function () {
     pr('test app started')
 });

@@ -92,41 +92,7 @@ body {
     margin-top: 50px;
 }
 
-/* inputs , forms css */
-.form-auth-style .item-input {
-    padding: 0px 0 0px 16px;
-    margin: 10px 0 !important;
-    height: 50px;
-    background-color: rgb(241, 241, 241);
-}
-
-.form-auth-style .item-input input {
-    height: 50px;
-    background-color: white;
-    padding-left: 10px;
-}
-
-.form-auth-style .item-input .icon {
-    min-width: 30px;
-}
-
-.form-auth-style {
-    padding: 15px 0;
-    border: 3px solid #e43;
-    border-width: 3px 0;
-}
-
-/* modal full screen */
-.modal {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-}
-
-/* form validation */
-.item-input input.ng-invalid {
-    color: #F70B0B;
-    border: 1px solid #FC0808;
+/* form */
+.form-auth-style .item-floating-label {
+    border-width: 1px 0;
 }

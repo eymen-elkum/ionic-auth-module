@@ -1,27 +1,40 @@
 <ion-modal-view >
-    <ion-header-bar >
-        <h1 class="title" ></h1 >
+   <ion-header-bar >
+      <h1 class="title" ></h1 >
 
-        <div class="buttons" >
-            <button class="button button-icon icon ion-ios-close-empty" ng-click="close()" ></button >
-        </div >
-    </ion-header-bar >
-    <ion-content overflow-scroll="true" >
-        <div class="pane row" style="max-width: 400px;margin: 0 auto;" >
-            <div class="col col-center" >
-                <div class="text-center padding" >
-                    <img src="images/logo-100.png" >
-                </div >
-                <form ng-submit="login()" name="loginForm" ng-submit="signIn(user)" class="form-auth-style">
-                    <formly-form model="form.model" fields="form.fields" options="form.options" class="list" >
-                        <button class="button icon-right ion-log-in button-balanced button-block" > Sign-In</button >
-                    </formly-form >
-                </form >
-                <a class="button icon-right ion-ios-help button-assertive button-block " ng-click="change_pass()" >Forgot
-                    password</a >
-                <a class="button icon-right ion-person-add button-energized button-block " ng-click="register()" >Create
-                    Account</a >
+      <div class="buttons" >
+         <button class="button button-icon icon ion-ios-close-empty" ng-click="close()" ></button >
+      </div >
+   </ion-header-bar >
+   <ion-content overflow-scroll="true" >
+      <div class="pane row" style="max-width: 400px;margin: 0 auto;" >
+         <div class="col col-center" >
+            <div class="text-center padding" >
+               <img src="images/logo-100.png" >
             </div >
-        </div >
-    </ion-content >
+            <form ng-submit="login()" name="loginForm" ng-submit="signIn(user)" class="form-auth-style" >
+               <div class="list">
+                  <label class="item item-input item-floating-label">
+                     <span class="input-label">Email:</span>
+                     <input type="email" ng-model="form.model.email" placeholder="Type your email here">
+                  </label>
+                  <label class="item item-input item-floating-label">
+                     <span class="input-label">Password:</span>
+                     <input type="password" ng-model="form.model.password" placeholder="Type your password here">
+                  </label>
+                  <li class="item item-checkbox item-floating-label">
+                     <label class="checkbox">
+                        <input type="checkbox">
+                     </label> Remember Me!
+                  </li>
+               </div>
+               <button class="button icon-right ion-log-in button-balanced button-block" > Sign-In</button >
+            </form >
+            <a class="button icon-right ion-ios-help button-assertive button-block " ng-click="change_pass()" >Forgot
+               password</a >
+            <a class="button icon-right ion-person-add button-energized button-block " ng-click="register()" >Create
+               Account</a >
+         </div >
+      </div >
+   </ion-content >
 </ion-modal-view >

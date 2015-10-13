@@ -1,17 +1,7 @@
 'use strict';
 
-function pr(o) {
-    console.log('--------------------------------------------------------')
-    console.log(o)
-    console.log('........................................................')
-}
-function er(o) {
-    console.log('--------------------------------------------------------')
-    console.warn(o)
-    console.log('........................................................')
-}
 angular.module('auth-templates', []);
-angular.module('ionicAuth', ['ui.router', 'ionic', 'LocalStorageModule', 'ngAuth-buffer', 'ngAnimate','formly','formlyIonic','ngMessages','toastr','auth-templates']);
+angular.module('ionicAuth', ['ui.router', 'ionic', 'LocalStorageModule', 'ngAuth-buffer', 'ngAnimate','ngMessages','toastr','auth-templates']);
 angular.module('ionicAuth').config(function ($stateProvider, localStorageServiceProvider, $httpProvider, toastrConfig) {
 
     $httpProvider.interceptors.push('auth_interceptor');
@@ -75,14 +65,8 @@ angular.module('ionicAuth').config(function ($stateProvider, localStorageService
         });
 });
 
-angular.module('ionicAuth').run(function ($rootScope, user, $http, formlyConfig, formlyValidationMessages) {
+angular.module('ionicAuth').run(function ($rootScope, user, $http) {
     $http.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
     $http.defaults.headers.common['X-Master-General-Key'] = 'U2FsdGVkX19PQ0Z0ka4thG2tWSLS375F';
     user.start();
-
-    // formly config
-    //formlyConfig.extras.errorExistsAndShouldBeVisibleExpression = 'fc.$touched || form.$submitted';
-
-    formlyValidationMessages.addStringMessage('required', 'This field is required');
-
 });
