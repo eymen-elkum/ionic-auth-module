@@ -13,6 +13,8 @@ function er(o) {
 angular.module('testApp', ['ui.router', 'ionic','ionicAuth']);
 angular.module('testApp').config(function ($stateProvider, $urlRouterProvider, localStorageServiceProvider, $httpProvider, toastrConfig) {
 
+    $httpProvider.interceptors.push('app_interceptor');
+
     $stateProvider
         .state('app', {
             url     : "/app",

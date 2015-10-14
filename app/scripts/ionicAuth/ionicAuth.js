@@ -5,7 +5,6 @@ angular.module('ionicAuth', ['ui.router', 'ionic', 'LocalStorageModule', 'ngAuth
 angular.module('ionicAuth').config(function ($stateProvider, localStorageServiceProvider, $httpProvider, toastrConfig) {
 
     $httpProvider.interceptors.push('auth_interceptor');
-    $httpProvider.interceptors.push('app_interceptor');
 
     localStorageServiceProvider.setPrefix('app.auth');
 
